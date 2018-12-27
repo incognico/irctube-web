@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+RewriteRule ^categories/?$ index.cgi?dest=categories [L]
+RewriteRule ^commands/?$ index.cgi?dest=commands [L]
+RewriteRule ^contact/?$ index.cgi?dest=contact [L]
+RewriteRule ^info/?$ index.cgi?dest=info [L]
+RewriteRule ^([0-9]+)/?$ index.cgi?page=$1 [L]

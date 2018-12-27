@@ -1,0 +1,8 @@
+[% INCLUDE header.tt %]
+<div class="content">
+   <div class="content-subhead links">
+      <h3>Contact</h3>
+      <p>You can get in touch with me (nico) at #/dev/null on irc.rizon.net.</p>
+      <p>Email is possible too: <a href="mailto:nico@lifeisabug.com">nico@lifeisabug.com</a></p>
+   </div>
+[% INCLUDE footer.tt %]

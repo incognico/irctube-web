@@ -1,0 +1,162 @@
+[% INCLUDE header.tt %]
+<div class="content">
+   <div class="content-subhead">
+      <h3>Bot Commands</h3>
+      <p>There are some commands available for public use:</p>
+   </div>
+   <div class="content-container">
+      <h4>+yt &mdash; Search logged YouTube videos</h4>
+      <p class="bold">Syntax:<span class="mono"> +yt &lt;search string&gt;</span></p>
+      <p><span class="bold">Description: </span>Returns the last logged YouTube-video URL which matches <span class="bold mono">&lt;search string&gt;</span>.</p>
+      <p>You need to specify at least two characters as search string. The search is fuzzy so "boo" could match "foobarbaz".</p>
+      <p>
+      <span class="bold">Example:</span>
+      <br />
+      <span class="mono">
+      &lt;user&gt; +yt <span class="bold">test</span><br />
+      &lt;YouTube&gt; http://youtu.be/XXXXXXXXXXX :: The Grea<span class="bold">test</span> Fireworks On Earth :: 30m :: posted by someuser in #somechannel
+      </span>
+      </p>
+   </div>
+   <div class="content-container">
+      <h4>+ddg &mdash; DuckDuckGo Instant Answers</h4>
+      <p class="bold">Syntax:<span class="mono"> +ddg &lt;query&gt;</span></p>
+      <p class="bold ">Alternative triggers:<span class="mono"> +d</span></p>
+      <p><span class="bold">Description: </span>Returns stuff from DuckDuckGo.com, this includes some <a href="https://duckduckgo.com/goodies">goodies</a> and all <a href="https://duckduckgo.com/bang">!bangs</a> commands.</p>
+      <p>
+      <span class="bold">Example:</span>
+      <br />
+      <span class="mono">
+         &lt;user&gt; +d password 15 strong<br />
+         &lt;YouTube&gt; 2FG^jqgf!buqara random password<br />
+         &lt;user&gt; +d github mpdas<br />
+         &lt;YouTube&gt; https://github.com/hrkfdn/mpdas :: Software description: mPD AudioScrobbler written in C++ using libcurl (C++).<br />
+         &lt;user&gt; +d !yt harlem shake<br />
+         &lt;YouTube&gt; https://www.youtube.com/results?search_query=harlem%20shake
+      </span>
+      </p>
+   </div>
+   <div class="content-container">
+      <h4>+expand &mdash; Expand short URLs</h4>
+      <p class="bold">Syntax:<span class="mono"> +expand &lt;short URL&gt;</span></p>
+      <p><span class="bold">Description: </span>Returns the destination of shortened URLs or URLs who redirect via the HTTP location field, using longurl.org.</p>
+      <p>
+      <span class="bold">Example:</span>
+      <br />
+      <span class="mono">
+         &lt;user&gt; +expand http://is.gd/w<br />
+         &lt;YouTube&gt; http://google.com/
+      </span>
+      </p>
+   </div>
+   <div class="content-container">
+      <h4>+maps &mdash; Show a place on Google Maps</h4>
+      <p class="bold">Syntax:<span class="mono"> +maps &lt;location&gt;</span></p>
+      <p><span class="bold">Description: </span>Returns a Google Maps URL of <span class="bold mono">&lt;location&gt;</span>, found via Google Maps Geocoder.</p>
+      <p>
+      <span class="bold">Example:</span>
+      <br />
+      <span class="mono">
+         &lt;user&gt; +maps New York<br />
+         &lt;YouTube&gt; New York, NY, USA: https://maps.google.com/maps?q=40.7143528,-74.0059731&amp;t=h&amp;z=14
+      </span>
+      </p>
+   </div>
+   <div class="content-container">
+      <h4>+omdb &mdash; Query the Open Movie Database</h4>
+      <p class="bold">Syntax:<span class="mono"> +omdb &lt;movie title&gt;</span></p>
+      <p class="bold ">Alternative triggers:<span class="mono"> +imdb, +rt, +film, +movie, +flick</span></p>
+      <p><span class="bold">Description: </span>Returns movie information and ratings from IMDB and Metacritic for <span class="bold mono">&lt;movie title&gt;</span>.</p>
+      <p>
+      <span class="bold">Example:</span>
+      <br />
+      <span class="mono">
+         &lt;user&gt; +movie the matrix<br />
+         &lt;YouTube&gt; The Matrix (1999) :: http://imdb.com/title/tt0133093 :: Plot: A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers. :: Genre: Action, Sci-Fi :: Runtime: 136 min :: Country: USA :: Metascore: 73 :: IMDb: 8.7/10 (1,314,628 votes)
+      </span>
+      </p>
+   </div>
+   <div class="content-container">
+      <h4>+seen &mdash; Person last seen</h4>
+      <p class="bold">Syntax:<span class="mono"> +seen &lt;nickname&gt;</span></p>
+      <p><span class="bold">Description: </span>Shows when the bot last seen <span class="bold mono">&lt;nickname&gt;</span>.</p>
+      <p>
+      <span class="bold">Example:</span>
+      <br />
+      <span class="mono">
+         &lt;user&gt; +seen Lanessear<br />
+         &lt;YouTube&gt; Lanessear (Sune@Doppelpunkt.Drei) was last seen 30 seconds ago, parting #k
+      </span>
+      </p>
+   </div>
+   <div class="content-container">
+      <h4>+tld &mdash; Top Level Domains to country name</h4>
+      <p class="bold">Syntax:<span class="mono"> +tld &lt;[.]tld&gt;</span></p>
+      <p><span class="bold">Description: </span>Returns the country name of <span class="bold mono">&lt;[.]tld&gt;</span>. The dot is optional.</p>
+      <p>
+      <span class="bold">Example:</span>
+      <br />
+      <span class="mono">
+         &lt;user&gt; +tld li<br />
+         &lt;YouTube&gt; .li: Liechtenstein (Principality of)
+      </span>
+      </p>
+   </div>
+   <div class="content-container">
+      <h4>+urban &mdash; Query Urban Dictionary</h4>
+      <p class="bold">Syntax:<span class="mono"> +urban &lt;term&gt;</span></p>
+      <p class="bold">Alternative triggers:<span class="mono"> +u, +ud</span></p>
+      <p><span class="bold">Description: </span>Returns the top three definitions of <span class="bold mono">&lt;term&gt;</span> from Urban Dictionary.</p>
+      <p>
+      <span class="bold">Example:</span>
+      <br />
+      <span class="mono">
+         &lt;user&gt; +u shart<br />
+         &lt;YouTube&gt; 1/10 :: a small, unintended defecation that occurs when one relaxes the anal sphincter to fart (blend of "shit" and "fart")<br />
+         &lt;YouTube&gt; 2/10 :: gas followed by mass.<br />
+         &lt;YouTube&gt; 3/10 :: When one farts and a little shit comes out.
+      </span>
+      </p>
+   </div>
+   <div class="content-container">
+      <h4>+xonostat &mdash; Display Xonotic player stats</h4>
+      <p class="bold">Syntax:<span class="mono"> +xonostat [player stats id]</span></p>
+      <p class="bold">Alternative triggers:<span class="mono"> +xs</span></p>
+      <p><span class="bold">Description: </span>Returns a player stats overview for the open source shooter <a href="http://www.xonotic.org/">Xonotic</a> for a given <span class="bold mono">[player stats id]</span>. The bot remembers your last queried id after you have specified it once. Stats are queried from stats.xonotic.org.</p>
+      <p>
+      <span class="bold">Example:</span>
+      <br />
+      <span class="mono">
+         &lt;user&gt; +xs 99876<br />
+         &lt;YouTube&gt; incognico :: games: 26/12/14 (46.15% win) :: k/d: 1.30 (665/512) :: ctf rank: 290/1604 (81.97 pctl.) :: ctf elo: 400.91 :: fav map: lostspace2(ctf) :: last seen 23 minutes ago
+      </span>
+      </p>
+   </div>
+   <div class="content-container">
+      <h4>+weather &mdash; Display the current weather</h4>
+      <p class="bold">Syntax:<span class="mono"> +weather [location]</span></p>
+      <p class="bold">Alternative triggers:<span class="mono"> +w</span></p>
+      <p><span class="bold">Description: </span>Returns the current weather conditions for <span class="bold mono">[location]</span>. The bot remembers your location - after you have specified it once, you can omit it in the future by just using +weather or +w. Data is provided by yr.no.</p>
+      <p>
+      <span class="bold">Example:</span>
+      <br />
+      <span class="mono">
+         &lt;user&gt; +w new york<br />
+         &lt;YouTube&gt; New York, NY, USA (10m/34ft) :: -2.4°C / 27.7°F :: Sun/clear :: Cld: 4% :: Hum: 45% :: Fog: 0% :: Wnd: Gentle breeze from S
+      </span>
+      </p>
+   </div>
+   <div class="content-container">
+      <h4>Magic 8 Ball</h4>
+      <p><span class="bold">Description: </span>If you include "boxes" in the lines you write, the bot will check a random one. Boxes are pairs of brackets with a space in between, followed by one space and any text, see the example below. There can be any amount of boxes.</p>
+      <p>
+      <span class="bold">Example:</span>
+      <br />
+      <span class="mono">
+         &lt;user&gt; Hmm, what should I eat today?<br />
+         &lt;user&gt; [ ] pizza [ ] pasta [ ] soup<br />
+         &lt;YouTube&gt; [ ] pizza [x] pasta [ ] soup
+      </span>
+      </p>
+   </div>
+[% INCLUDE footer.tt %]

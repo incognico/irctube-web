@@ -1,0 +1,20 @@
+         <div class="footer">[% totalvids %] video[% IF totalvids != 1 %]s[% END %] [% IF dest != 'index' %]logged so far[% ELSE %]match[% IF totalvids == 1 %]es[% END %] your filters[% END %]<br /><span class="smaller" title="nico@lifeisabug.com">&copy; 2012-2015 nico &mdash; find me in #/dev/null at irc.rizon.net</span>
+         </div>
+      </div>
+   </div>
+</div>
+   [% IF needjs == 1 %]
+   <script src="[% url %]/static/js/ui.js"></script>
+   <script src="[% url %]/static/js/jquery.min.js"></script>
+   <script src="[% url %]/static/js/jquery.lazyload.min.js"></script>
+   <script src="[% url %]/static/js/jquery.lite-youtube.js"></script>
+   <script>
+      $(function() {
+        var liteDivs = $('.lite');
+        YTLiteEmbed(liteDivs);
+      });
+   </script>
+   [% END %]
+   <!-- [% debug %] -->
+</body>
+</html>

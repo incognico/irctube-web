@@ -1,0 +1,26 @@
+[% IF sql %]<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="https://www.w3.org/2005/Atom">
+   <channel>
+      <atom:link href="[% mainurl %]/?rss=1" rel="self" type="application/rss+xml" />
+      <title>IRCTube: YouTube video aggregation on IRC</title>
+      <link>[% mainurl %]/</link>
+      <description>IRCTube: YouTube video aggregation on Internet Relay Chat.</description>
+      <language>en</language>
+      [% FOR sql %]
+      <item>
+         <title>[% vtitle %]</title>
+         <link>[% mainurl %]/?v=[% vid %]</link>
+         <guid>[% mainurl %]/?v=[% vid %]</guid>
+         <description>
+         <![CDATA[
+            <p><strong>Video: <a href="[% mainurl %]/?v=[% vid %]">[% vtitle %]</a></strong></p>
+            <p>Posted by <strong><a href="[% mainurl %]/?nickname=[% nickname %]" title="[% nickname %] ([% user %]@[% host %])">[% nickname %]</a></strong> in <strong><a href="[% mainurl %]/?channel=%23[% channel.substr(1) %]">[% channel %]</a></strong> on <strong><a href="[% mainurl %]/?network=[% network %]">[% network.ucfirst %]</a></strong> at <strong>[% timestamp %]+01:00</strong></p>
+            <p><strong><a href="[% mainurl %]/?v=[% vid %]" title="Watch this video">Watch this video</a></strong></p>
+         </ul>
+         ]]>
+      </description>
+    </item>
+    [% END %]
+  </channel>
+</rss>
+[% END %]

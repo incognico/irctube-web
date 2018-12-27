@@ -1,0 +1,36 @@
+[% IF filtermode %]
+   [% USE url(mainurl, 'network'=network, 'nickname'=nickname, 'channel'=channel, 'category'=category, 'filtermode'=1) %]
+[% ELSE %]
+   [% USE url(mainurl) %]
+[% END %]
+   [% IF pages.size > 1 && sql.size != 0 %] 
+   <div class="content-subhead">
+      [% INCLUDE pageselector.tt %]
+   </div>
+   [% END %]
+   [% IF sql %]
+   [% FOR sql %]
+   <div class="content-container">
+         <h3><a class="icon-youtube" href="https://www.youtube.com/watch?v=[% vid %]"> [% vtitle %]</a></h3>
+         <br />
+         <div class="video" style="width:[% width+4 %]px;height:[% height+5 %]px;">
+            <div class="lite" id="[% vid %]" style="width:[% width+4 %]px;height:[% height+5 %]px;"></div>
+         </div>
+         Posted by <a href="[% url('nickname'=nickname) %]" title="[% nickname %] ([% user %]@[% host %])">[% nickname %]</a>
+         in&nbsp;<a href="[% USE mychannel = String '#' %][% url('channel'=mychannel.append(channel.substr(1))) %]">[% channel %]</a>
+         on&nbsp;<a href="[% url('network'=network) %]">[% network.ucfirst %]</a>[% IF count > 1 %] (video has been reposted [% IF count == 2 %]once[% ELSIF count >= 22 %]over 20 times[% ELSE %][% count - 1 %] times[% END %] since)[% END %]
+         <div class="smaller">Playtime:&nbsp;[% vlength %]&nbsp;&mdash; Category:&nbsp;<a href="[% url('category'=category) %]">[% categories.item(category).replace('\s', '&nbsp;') %]</a>&nbsp;&mdash; Channel:&nbsp;[% vuploader.replace('\s', '&nbsp;') %]</div>
+         <div class="smaller"><time datetime="[% timestamp %]+01:00" title="CET (UTC+1)"><a href="[% mainurl %]/?v=[% vid %]" title="[% timestamp %]+01:00">Posted [% epo %] ago</a></time></div>
+   </div>
+   [% END %]
+   [% IF pages.size > 1 %]   
+   <div class="content-subhead">
+      [% INCLUDE pageselector.tt %]
+   </div>
+   [% END %]
+   [% IF sql.size == 0 %]
+   <div class="content-container">
+      <p>No matches <span class="bigger">&#x2639;</span></p>
+   </div>
+   [% END %]
+   [% END %]

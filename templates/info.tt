@@ -1,0 +1,10 @@
+[% INCLUDE header.tt %]
+<div class="content">
+   <div class="content-subhead links">
+      <h3>Info</h3>
+      <p>The bots main purpose is to display information about posted YouTube-videos and to save them to its database to feed this website. Though, once invited, there are some <a href="[% url %]/commands">commands available for public use</a>.</p>
+      <p>You can subscribe (RSS) to the YouTube-videos posted in a channel by using<span class="mono"> [% url %]/?rss=1&amp;channel=%23channelname </span>(replace channelname with the name of the desired channel). The other available URL parameters work too.</p>
+      <p>Note that GameSurge and QuakeNet don't allow the bot to join more than 20 channels. On QuakeNet you have to request the bot by <a href="[% url %]/contact">contacting me</a> and on GameSurge you may have bad luck when the channel limit is reached. On Rizon the bot is exempt from channel limits.</p>
+      <p>The IRCTube website is not indexed by search engines and it won't be in the future.</p>
+   </div>
+[% INCLUDE footer.tt %]

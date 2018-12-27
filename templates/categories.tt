@@ -1,0 +1,11 @@
+[% INCLUDE header.tt %]
+<div class="content">
+   <div class="content-subhead links">
+      <h3>Video Categories</h3>
+      <ul>
+      [% FOREACH i IN categories.sort %]
+         <li><a [% IF i == 10 %]class="bold" [% END %]href="[% mainurl %]/?category=[% i %]">[% categories.item(i) %]</a></li>
+      [% END %]
+      </ul>
+   </div>
+[% INCLUDE footer.tt %]

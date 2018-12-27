@@ -1,0 +1,14 @@
+[% INCLUDE header.tt %]
+<div class="content">
+   <div class="content-subhead">
+      <p class="links"><strong>Taking part: </strong>On <a href="https://gamesurge.net/">GameSurge</a> and <a href="https://www.rizon.net/">Rizon</a>:<span class="mono" title="The channel you are inviting the bot to requires a reasonable amout of users."> /invite YouTube </span>(altnick: IRCTube) &mdash; for <a href="https://www.quakenet.org/">QuakeNet</a> ask <a href="[% url %]/contact">nico</a>
+      <br />
+      <strong>URL parameters </strong>(can be combined): <span class="mono">channel=%23&hellip;, nickname=&hellip;, network=&hellip;, category=&hellip;, page=&hellip;, rss=1</span></p>
+   </div>
+   <noscript>
+      <div class="content-subhead">
+         <strong>Please enable JavaScript.</strong>
+      </div>
+   </noscript>
+   [% INCLUDE video.tt %]
+[% INCLUDE footer.tt %]
